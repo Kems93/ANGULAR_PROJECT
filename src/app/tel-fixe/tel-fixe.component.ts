@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProduitsService } from '../produits.service';
 
 @Component({
   selector: 'app-tel-fixe',
   templateUrl: './tel-fixe.component.html',
-  styleUrls: ['./tel-fixe.component.css']
+  styleUrls: ['./tel-fixe.component.css'],
+  providers: [ProduitsService]
 })
-export class TelFixeComponent {
+export class TelFixeComponent implements OnInit {
+  telephonesFixes: any[] = [];
 
+  constructor(private produitsService: ProduitsService) { }
+
+  ngOnInit(): void {
+    this.getTelephoneFixe();
+  }
+
+  getTelephoneFixe(): void {
+    this.produitsService.getTelephoneFixe()
+      .subscribe(telephonesFixes => {
+        this.telephonesFixes = telephonesFixes;
+      });
+  }
 }

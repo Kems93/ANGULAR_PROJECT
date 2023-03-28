@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProduitsService } from '../produits.service';
 
 @Component({
   selector: 'app-cle-usb',
   templateUrl: './cle-usb.component.html',
-  styleUrls: ['./cle-usb.component.css']
+  styleUrls: ['./cle-usb.component.css'],
+  providers: [ProduitsService]
 })
-export class CleUsbComponent {
+export class CleUsbComponent implements OnInit {
+  cles: any[] = [];
 
+  constructor(private produitsService: ProduitsService) { }
+
+  ngOnInit(): void {
+    this.getCleUsb();
+  }
+
+  getCleUsb(): void {
+    this.produitsService.getCleUsb()
+      .subscribe(cles => {
+        this.cles = cles;
+      });
+  }
 }

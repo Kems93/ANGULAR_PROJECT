@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProduitsService } from '../produits.service';
 
 @Component({
   selector: 'app-disque-dur',
   templateUrl: './disque-dur.component.html',
-  styleUrls: ['./disque-dur.component.css']
+  styleUrls: ['./disque-dur.component.css'],
+  providers: [ProduitsService]
 })
-export class DisqueDurComponent {
+export class DisqueDurComponent implements OnInit {
+  disques: any[] = [];
 
+  constructor(private produitsService: ProduitsService) { }
+
+  ngOnInit(): void {
+    this.getDisqueDur();
+  }
+
+  getDisqueDur(): void {
+    this.produitsService.getDisqueDur()
+      .subscribe(disques => {
+        this.disques = disques;
+      });
+  }
 }
