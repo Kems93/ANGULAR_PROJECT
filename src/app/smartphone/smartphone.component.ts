@@ -20,6 +20,7 @@ export class SmartphoneComponent implements OnInit {
     this.produitsService.getSmartphones()
       .subscribe(smartphones => {
         this.smartphones = smartphones;
+        console.log(smartphones)
       });
   }
 }

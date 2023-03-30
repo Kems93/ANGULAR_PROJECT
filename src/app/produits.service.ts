@@ -24,11 +24,11 @@ export class ProduitsService {
   }
 
   getPcAccessoires(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '?categorie=<Ordinateurs&sousCategorie=Accessoire');
+    return this.http.get<Array<any>>(this.url + '?categorie=Ordinateurs&sousCategorie=Accessoire');
   }
 
   getSmartphones(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/7');
+    return this.http.get<Array<any>>(this.url + '?categorie=Telephonies&sousCategorie=Smartphone');
   }
 
   getTelephoneFixe(): Observable<Array<any>> {

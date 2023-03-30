@@ -20,6 +20,7 @@ export class AccessoirePcComponent implements OnInit {
     this.produitsService.getPcAccessoires()
       .subscribe(accessoires => {
         this.accessoires = accessoires;
+        console.log(accessoires)
       });
   }
 }
