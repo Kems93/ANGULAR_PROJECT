@@ -15,6 +15,10 @@ import { DisqueDurComponent } from './disque-dur/disque-dur.component';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { AccessoireStockageComponent } from './accessoire-stockage/accessoire-stockage.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { FormsModule } from '@angular/forms';
+import { ConnexionService } from './users.service';
+import { ProduitsService } from './produits.service';
 
 
 @NgModule({
@@ -31,13 +35,15 @@ import { AccueilComponent } from './accueil/accueil.component';
     CleUsbComponent,
     AccessoireStockageComponent,
     AccueilComponent,
+    ConnexionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule // Ajout de HttpClientModule dans la liste des imports
+    HttpClientModule, // Ajout de HttpClientModule dans la liste des imports
+    FormsModule
   ],
-  providers: [],
+  providers: [ConnexionService, ProduitsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
