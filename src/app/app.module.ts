@@ -17,8 +17,7 @@ import { AccessoireStockageComponent } from './accessoire-stockage/accessoire-st
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { FormsModule } from '@angular/forms';
-import { ConnexionService } from './users.service';
-import { ProduitsService } from './produits.service';
+
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import { ProduitsService } from './produits.service';
     CleUsbComponent,
     AccessoireStockageComponent,
     AccueilComponent,
-    ConnexionComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +41,7 @@ import { ProduitsService } from './produits.service';
     HttpClientModule, // Ajout de HttpClientModule dans la liste des imports
     FormsModule
   ],
-  providers: [ConnexionService, ProduitsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
