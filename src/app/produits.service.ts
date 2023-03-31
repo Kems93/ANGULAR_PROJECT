@@ -16,11 +16,11 @@ export class ProduitsService {
   }
 
   getPcPortable(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/4');
+    return this.http.get<Array<any>>(this.url + '?categorie=Ordinateurs&sousCategorie=Pc_Portable');
   }
 
   getPcBureau(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/5');
+    return this.http.get<Array<any>>(this.url + '?categorie=Ordinateurs&sousCategorie=Pc_Bureau');
   }
 
   getPcAccessoires(): Observable<Array<any>> {
@@ -32,22 +32,22 @@ export class ProduitsService {
   }
 
   getTelephoneFixe(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/8');
+    return this.http.get<Array<any>>(this.url + '?categorie=Telephonies&sousCategorie=Tel_fixe');
   }
 
   getTelephoneAccessoires(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/9');
+    return this.http.get<Array<any>>(this.url + '?categorie=Telephonies&sousCategorie=Accessoire');
   }
 
   getDisqueDur(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/10');
+    return this.http.get<Array<any>>(this.url + '?categorie=Stockage&sousCategorie=Disque_dur');
   }
 
   getCleUsb(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/11');
+    return this.http.get<Array<any>>(this.url + '?categorie=Stockage&sousCategorie=Cle_usb');
   }
 
   getStockageAccessoire(): Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.url + '/12');
+    return this.http.get<Array<any>>(this.url + '?categorie=Stockage&sousCategorie=Accessoire');
   }
 }
