@@ -15,8 +15,11 @@ import { DisqueDurComponent } from './disque-dur/disque-dur.component';
 import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { AccessoireStockageComponent } from './accessoire-stockage/accessoire-stockage.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { FormsModule } from '@angular/forms';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 
 
@@ -34,12 +37,13 @@ import { FormsModule } from '@angular/forms';
     CleUsbComponent,
     AccessoireStockageComponent,
     AccueilComponent,
+    ConnexionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, // Ajout de HttpClientModule dans la liste des imports
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

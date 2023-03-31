@@ -10,6 +10,7 @@ import { PcDeBureauComponent } from './pc-de-bureau/pc-de-bureau.component';
 import { PcPortableComponent } from './pc-portable/pc-portable.component';
 import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { TelFixeComponent } from './tel-fixe/tel-fixe.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
 {path: 'Disque', component:DisqueDurComponent},
 {path: 'Cle', component:CleUsbComponent},
 {path: 'AccesStoc', component:AccessoireStockageComponent},
+{path: 'Connexion', component:ConnexionComponent},
 
 
 
