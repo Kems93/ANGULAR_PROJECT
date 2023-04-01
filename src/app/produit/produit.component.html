@@ -1,0 +1,49 @@
+<div class="container">
+  <a
+    routerLink="#"
+    [queryParams]="produit"
+    class="btn btn-warning m-2"
+    *ngIf="checkAdmin('client')"
+  >
+    Modifier
+  </a>
+
+  <button
+    class="btn btn-danger"
+    (click)="suppProduit()"
+    *ngIf="checkAdmin('client')"
+  >
+    Supprimer
+  </button>
+  <div class="row">
+    <div class="col-sm">
+      <img
+        class="card-img-top"
+        src="{{ produit.photo }}"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="col-sm d-flex flex-column justify-content-center">
+      <h5 class="card-title">{{ produit.nom }}</h5>
+      <h6 class="card-title">{{ produit.description }}</h6>
+      <p class="card-text">{{ produit.prix }}€</p>
+      <form
+        class="d-flex justify-content-center flex-row m-2"
+      >
+        <div class="input-group mb-3">
+          <input
+            #quantite
+            type="number"
+            min="1"
+            class="form-control"
+            value="1"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-success" type="submit">Ajouter</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

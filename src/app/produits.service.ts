@@ -50,4 +50,11 @@ export class ProduitsService {
   getStockageAccessoire(): Observable<Array<any>> {
     return this.http.get<Array<any>>(this.url + '?categorie=Stockage&sousCategorie=Accessoire');
   }
+
+  getProduitById(id: string | null): Observable<Object> {
+    return this.http.get<Object>(this.url+`/${id}`);
+  }
+  suppProduit(id: string | null) {
+    return this.http.delete(this.url+`/${id}`);
+  }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'; // Import de HttpClientModule
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,12 +15,10 @@ import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { AccessoireStockageComponent } from './accessoire-stockage/accessoire-stockage.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
 import { FormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
 import {FooterComponent} from "./footer/footer.component";
-
+import {ProduitComponent} from "./produit/produit.component";
 
 
 @NgModule({
@@ -39,7 +36,8 @@ import {FooterComponent} from "./footer/footer.component";
     AccessoireStockageComponent,
     AccueilComponent,
     ConnexionComponent,
-    FooterComponent
+    FooterComponent,
+    ProduitComponent
   ],
   imports: [
     BrowserModule,

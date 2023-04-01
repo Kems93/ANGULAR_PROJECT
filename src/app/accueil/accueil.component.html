@@ -31,7 +31,7 @@
               <div class="col mb-5" *ngFor="let produit of produits">
                 <div class="card h-100">
                   <!-- Product image-->
-                  <a href="#">
+                  <a routerLink="/produits/{{produit.id}}">
                     <img class="card-img-top" src="{{ produit.photo }}" />
                   </a>
                   <!-- Product details-->
@@ -45,7 +45,7 @@
                   </div>
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-1 border-top-0 bg-transparent">
-                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">+</a></div>
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" routerLink="#">+</a></div>
                   </div>
                 </div>
               </div>

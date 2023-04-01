@@ -11,6 +11,7 @@ import { PcPortableComponent } from './pc-portable/pc-portable.component';
 import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { TelFixeComponent } from './tel-fixe/tel-fixe.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import {ProduitComponent} from "./produit/produit.component";
 
 
 const routes: Routes = [
@@ -26,11 +27,8 @@ const routes: Routes = [
 {path: 'Cle', component:CleUsbComponent},
 {path: 'AccesStoc', component:AccessoireStockageComponent},
 {path: 'Connexion', component:ConnexionComponent},
-
-
-
+{path: 'produits/:id', component:ProduitComponent}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
