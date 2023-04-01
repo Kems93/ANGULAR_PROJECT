@@ -8,7 +8,7 @@ import { ProduitsService } from '../produits.service';
   providers: [ProduitsService]
 })
 export class TelFixeComponent implements OnInit {
-  telephonesFixes: any[] = [];
+  produits: any[] = [];
 
   constructor(private produitsService: ProduitsService) { }
 
@@ -19,7 +19,7 @@ export class TelFixeComponent implements OnInit {
   getTelephoneFixe(): void {
     this.produitsService.getTelephoneFixe()
       .subscribe(telephonesFixes => {
-        this.telephonesFixes = telephonesFixes;
+        this.produits = telephonesFixes;
       });
   }
 }

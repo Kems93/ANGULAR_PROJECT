@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
+import {FooterComponent} from "./footer/footer.component";
 
 
 
@@ -38,6 +39,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
     AccessoireStockageComponent,
     AccueilComponent,
     ConnexionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

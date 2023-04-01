@@ -33,10 +33,15 @@ export class ConnexionComponent {
         if (client && client.motdepasse === this.userForm.controls['password'].value) {
           // Authentification réussie, stocker les informations de l'utilisateur et rediriger
           localStorage.setItem('client', JSON.stringify(client));
-          this.router.navigate(['/']);
+          if (history.state && history.state.navigationId > 1) {
+            history.back();
+          } else {
+            this.router.navigate(['/']);
+          }
         } else {
           // Authentification échouée, afficher un message d'erreur
           console.log('Échec de l\'authentification');
+          location.reload();
         }
       });
       console.log('Email:', this.userForm.controls['email'].value);

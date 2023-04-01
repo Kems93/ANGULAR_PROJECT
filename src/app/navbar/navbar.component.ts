@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  checkConnexion(user: string): boolean {
+    return localStorage.getItem(user) ? true : false;
+  }
 
+  logout(user: string): void {
+    localStorage.removeItem(user);
+  }
 }

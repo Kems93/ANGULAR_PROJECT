@@ -8,7 +8,7 @@ import { ProduitsService } from '../produits.service';
   providers: [ProduitsService]
 })
 export class AccessoirePcComponent implements OnInit {
-  accessoires: any[] = [];
+  produits: any[] = [];
 
   constructor(private produitsService: ProduitsService) { }
 
@@ -19,7 +19,7 @@ export class AccessoirePcComponent implements OnInit {
   getAccessoiresPc(): void {
     this.produitsService.getPcAccessoires()
       .subscribe(accessoires => {
-        this.accessoires = accessoires;
+        this.produits = accessoires;
         console.log(accessoires)
       });
   }

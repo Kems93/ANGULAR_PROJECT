@@ -8,7 +8,7 @@ import { ProduitsService } from '../produits.service';
   providers: [ProduitsService]
 })
 export class CleUsbComponent implements OnInit {
-  cles: any[] = [];
+  produits: any[] = [];
 
   constructor(private produitsService: ProduitsService) { }
 
@@ -19,7 +19,7 @@ export class CleUsbComponent implements OnInit {
   getCleUsb(): void {
     this.produitsService.getCleUsb()
       .subscribe(cles => {
-        this.cles = cles;
+        this.produits = cles;
       });
   }
 }

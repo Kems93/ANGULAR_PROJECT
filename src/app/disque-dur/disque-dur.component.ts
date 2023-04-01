@@ -8,7 +8,7 @@ import { ProduitsService } from '../produits.service';
   providers: [ProduitsService]
 })
 export class DisqueDurComponent implements OnInit {
-  disques: any[] = [];
+  produits: any[] = [];
 
   constructor(private produitsService: ProduitsService) { }
 
@@ -19,7 +19,7 @@ export class DisqueDurComponent implements OnInit {
   getDisqueDur(): void {
     this.produitsService.getDisqueDur()
       .subscribe(disques => {
-        this.disques = disques;
+        this.produits = disques;
       });
   }
 }
