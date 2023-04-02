@@ -1,0 +1,52 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Mon panier</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Produit</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix unitaire</th>
+            <th scope="col">Prix total</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produit of produits">
+            <td>{{ produit.produit.nom }}</td>
+            <td>{{ produit.quantite }}</td>
+            <td>{{ produit.produit.prix }}€</td>
+            <td>{{ produit.produit.prix * produit.quantite }}€</td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="enleverDuPanier(produit)"
+              >
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-danger" (click)="viderPanier()">
+        Vider le panier
+      </button>
+    </div>
+    <div class="col">
+      <p class="text-right">
+        Total: {{ getTotal() }}€
+      </p>
+    </div>
+  </div>
+</div>
+

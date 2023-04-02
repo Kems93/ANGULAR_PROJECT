@@ -20,6 +20,7 @@ import {FooterComponent} from "./footer/footer.component";
 import {ProduitComponent} from "./produit/produit.component";
 import {NvproduitComponent} from "./nouveau-produit/nvproduit.component";
 import {ModifproduitComponent} from "./modif-produit/modifproduit.component";
+import { PanierComponent } from './panier/panier.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {ModifproduitComponent} from "./modif-produit/modifproduit.component";
     FooterComponent,
     ProduitComponent,
     NvproduitComponent,
-    ModifproduitComponent
+    ModifproduitComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

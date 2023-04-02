@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProduitsService } from '../produits.service';
-import {ActivatedRoute, Router} from "@angular/router";
-import {Client} from "../../client.model";
+import { ActivatedRoute, Router } from '@angular/router';
+import { Client } from '../../client.model';
+import { PanierService } from '../panier.service';
 
 @Component({
   selector: 'app-produit',
@@ -11,12 +12,14 @@ import {Client} from "../../client.model";
 })
 export class ProduitComponent implements OnInit {
   produit: any;
-  client:any;
+  client: any;
 
-
-  constructor(private produitsService: ProduitsService,private route: ActivatedRoute,private router: Router) {
-
-  }
+  constructor(
+    private produitsService: ProduitsService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private panierService: PanierService
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
@@ -28,15 +31,16 @@ export class ProduitComponent implements OnInit {
   }
 
   checkAdmin(user: string): boolean {
-    var a=localStorage.getItem(user);
-    if(a){
+    var a = localStorage.getItem(user);
+    if (a) {
       // @ts-ignore
-      this.client=JSON.parse(a);
+      this.client = JSON.parse(a);
       return this.client.admin == 1 ? true : false;
     }
     return false;
   }
-  suppProduit() : any{
+
+  suppProduit(): any {
     this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       this.produitsService.suppProduit(id).subscribe(() => {
@@ -44,4 +48,11 @@ export class ProduitComponent implements OnInit {
       });
     });
   }
+
+  ajouterAuPanier(quantiteInput: HTMLInputElement): void {
+    const quantite = parseInt(quantiteInput.value, 10);
+    console.log('Produit et quantité à ajouter', this.produit, quantite);
+    this.panierService.ajouterAuPanier({ produit: this.produit, quantite });
+  }
+
 }

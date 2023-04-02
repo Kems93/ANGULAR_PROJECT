@@ -14,6 +14,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import {ProduitComponent} from "./produit/produit.component";
 import {NvproduitComponent} from "./nouveau-produit/nvproduit.component";
 import {ModifproduitComponent} from "./modif-produit/modifproduit.component";
+import { PanierComponent } from './panier/panier.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
 {path: 'Connexion', component:ConnexionComponent},
 {path: 'produits/:id', component:ProduitComponent},
   {path: 'Nvproduit', component:NvproduitComponent},
-  {path: 'modifproduit/:id', component:ModifproduitComponent}
+  {path: 'modifproduit/:id', component:ModifproduitComponent},
+{path: 'panier', component:PanierComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
