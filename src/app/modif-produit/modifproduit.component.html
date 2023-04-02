@@ -1,0 +1,64 @@
+<div class="container py-5 bg-white mt-4 px-3 rounded">
+  <!-- <div
+      class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded"
+    > -->
+  <h1>Modifier le produit</h1>
+  <form (ngSubmit)="onSubmit()" [formGroup]="produitFormulaire">
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="nom"
+        name="nom"
+        formControlName="nom"
+        required
+        placeholder="{{produit.nom}}"
+        value="{{produit.nom}}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="description"
+        name="description"
+        formControlName="description"
+        required
+        placeholder="{{produit.description}}"
+        value="{{produit.description}}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="prix">Prix:</label>
+      <input
+        class="form-control"
+        type="number"
+        id="prix"
+        name="prix"
+        min="0"
+        formControlName="prix"
+        required
+        placeholder="{{produit.prix}}"
+        value="{{produit.prix}}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="photo">Photo:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="photo"
+        name="photo"
+        required
+        formControlName="photo"
+        placeholder="{{produit.photo}}"
+        value="{{produit.photo}}"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-dark">Submit</button>
+  </form>
+  <!-- </div> -->
+</div>

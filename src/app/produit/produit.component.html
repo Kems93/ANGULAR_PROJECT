@@ -1,20 +1,4 @@
 <div class="container">
-  <a
-    routerLink="#"
-    [queryParams]="produit"
-    class="btn btn-warning m-2"
-    *ngIf="checkAdmin('client')"
-  >
-    Modifier
-  </a>
-
-  <button
-    class="btn btn-danger"
-    (click)="suppProduit()"
-    *ngIf="checkAdmin('client')"
-  >
-    Supprimer
-  </button>
   <div class="row">
     <div class="col-sm">
       <img
@@ -46,4 +30,19 @@
       </form>
     </div>
   </div>
+  <a
+    routerLink="/modifproduit/{{produit.id}}"
+    class="btn btn-warning m-2"
+    *ngIf="checkAdmin('client')"
+  >
+    Modifier
+  </a>
+
+  <button
+    class="btn btn-danger"
+    (click)="suppProduit()"
+    *ngIf="checkAdmin('client')"
+  >
+    Supprimer
+  </button>
 </div>

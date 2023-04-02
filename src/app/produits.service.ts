@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -54,7 +54,25 @@ export class ProduitsService {
   getProduitById(id: string | null): Observable<Object> {
     return this.http.get<Object>(this.url+`/${id}`);
   }
-  suppProduit(id: string | null) {
+  suppProduit(id: string | null) : Observable<any> {
     return this.http.delete(this.url+`/${id}`);
   }
+  ajoutProduit(formulaire : any) : Observable<any>{
+    return this.http.post(this.url,formulaire,{
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    });
+  }
+
+  modifProduit(formulaire : any,id: string | null) : Observable<any>{
+    console.log(formulaire);
+    console.log(id);
+    return this.http.put(this.url+`/${id}`,formulaire,{
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      })
+    });
+  }
+
 }

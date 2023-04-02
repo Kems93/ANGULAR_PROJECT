@@ -12,6 +12,8 @@ import { SmartphoneComponent } from './smartphone/smartphone.component';
 import { TelFixeComponent } from './tel-fixe/tel-fixe.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import {ProduitComponent} from "./produit/produit.component";
+import {NvproduitComponent} from "./nouveau-produit/nvproduit.component";
+import {ModifproduitComponent} from "./modif-produit/modifproduit.component";
 
 
 const routes: Routes = [
@@ -27,7 +29,9 @@ const routes: Routes = [
 {path: 'Cle', component:CleUsbComponent},
 {path: 'AccesStoc', component:AccessoireStockageComponent},
 {path: 'Connexion', component:ConnexionComponent},
-{path: 'produits/:id', component:ProduitComponent}
+{path: 'produits/:id', component:ProduitComponent},
+  {path: 'Nvproduit', component:NvproduitComponent},
+  {path: 'modifproduit/:id', component:ModifproduitComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

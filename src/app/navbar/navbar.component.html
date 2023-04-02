@@ -43,8 +43,8 @@
       <div class="pull-right">
         <button type="button" class="btn btn-outline-dark" routerLink="Connexion" *ngIf="!checkConnexion('client')"> Sign In</button>
         <button type="button" class="btn btn-outline-dark" type="submit" *ngIf="checkConnexion('client')" (click)="logout('client')"> Log Out</button>
+        <button type="button" class="btn btn-outline-dark" routerLink="Nvproduit" *ngIf="checkAdmin('client')"> Nouveau produit</button>
       </div>
-
     </div>
   </div>
 </nav>

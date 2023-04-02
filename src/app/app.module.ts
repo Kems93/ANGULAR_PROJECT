@@ -15,10 +15,11 @@ import { CleUsbComponent } from './cle-usb/cle-usb.component';
 import { AccessoireStockageComponent } from './accessoire-stockage/accessoire-stockage.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
 import { ConnexionComponent } from './connexion/connexion.component';
 import {FooterComponent} from "./footer/footer.component";
 import {ProduitComponent} from "./produit/produit.component";
+import {NvproduitComponent} from "./nouveau-produit/nvproduit.component";
+import {ModifproduitComponent} from "./modif-produit/modifproduit.component";
 
 
 @NgModule({
@@ -37,7 +38,9 @@ import {ProduitComponent} from "./produit/produit.component";
     AccueilComponent,
     ConnexionComponent,
     FooterComponent,
-    ProduitComponent
+    ProduitComponent,
+    NvproduitComponent,
+    ModifproduitComponent
   ],
   imports: [
     BrowserModule,
