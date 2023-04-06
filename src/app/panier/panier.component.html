@@ -25,7 +25,7 @@
             <td>{{ produit.produit.prix * produit.quantite }}€</td>
             <td>
               <button
-                class="btn btn-danger"
+                class="btn btn-outline-dark"
                 (click)="enleverDuPanier(produit)"
               >
                 Supprimer
@@ -38,9 +38,11 @@
   </div>
   <div class="row">
     <div class="col">
-      <button class="btn btn-danger" (click)="viderPanier()">
+      <button class="btn btn-outline-dark" (click)="viderPanier()">
         Vider le panier
       </button>
+      <button class="btn btn-outline-dark" (click)="" *ngIf="checkConnexion('client')"> Valider panier</button>
+      <button type="button" class="btn btn-outline-dark" routerLink="/Connexion" *ngIf="!checkConnexion('client')"> Connexion</button>
     </div>
     <div class="col">
       <p class="text-right">

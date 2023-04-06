@@ -33,8 +33,6 @@ export class PanierComponent implements OnInit {
   }
 
 
-
-
   enleverDuPanier(produit: { produit: Produit, quantite: number }): void {
     this.panierService.enleverDuPanier(produit);
   }
@@ -48,5 +46,8 @@ export class PanierComponent implements OnInit {
       total += produit.produit.prix * produit.quantite;
     }
     return total;
+  }
+  checkConnexion(user: string): boolean {
+    return localStorage.getItem(user) ? true : false;
   }
 }
