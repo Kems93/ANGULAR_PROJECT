@@ -1,45 +1,39 @@
-/* Modifier produit container */
-.container.py-5 {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Form */
-form {
+.container {
+  margin: 0 auto;
+  max-width: 800px;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Form labels */
-form label {
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
-  margin-top: 10px;
 }
 
-/* Form inputs */
-form input.form-control {
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  border: 1px solid #ced4da;
-  padding: 5px;
-  margin-top: 5px;
 }
 
-form input.form-control:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
-}
-
-/* Submit button */
-button.btn.btn-dark {
-  background-color: #333;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  margin-top: 20px;
+.btn {
+  display: inline-block;
   padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
   border-radius: 4px;
+  cursor: pointer;
 }
 
-button.btn.btn-dark:hover {
-  background-color: #212529;
-  color: #fff;
+.btn:hover {
+  background-color: #555;
 }
