@@ -1,0 +1,47 @@
+/* Header */
+header {
+  background-color: #28a745;
+}
+
+header .display-4 {
+  font-size: 3rem;
+}
+
+header .lead {
+  font-size: 1.25rem;
+}
+
+/* Section */
+section.py-5 {
+  background-color: #f8f9fa;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body .fw-bolder {
+  font-size: 24px;
+  color: #333;
+}
+
+.card-footer {
+  padding: 20px;
+  border-top: none;
+}
+
+.btn-outline-dark {
+  border-color: #333;
+}

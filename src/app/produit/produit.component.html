@@ -1,20 +1,20 @@
-<div class="container">
+<div class="container product-container">
   <div class="row">
     <div class="col-sm">
       <img
-        class="card-img-top"
+        class="card-img-top product-image"
         src="{{ produit.photo }}"
         alt="Card image cap"
       />
     </div>
-    <div class="col-sm d-flex flex-column justify-content-center">
-      <h5 class="card-title">{{ produit.nom }}</h5>
-      <h6 class="card-title">{{ produit.description }}</h6>
-      <p class="card-text">{{ produit.prix }}€</p>
+    <div class="col-sm d-flex flex-column justify-content-center product-details">
+      <h5 class="card-title product-title">{{ produit.nom }}</h5>
+      <h6 class="card-title product-description">{{ produit.description }}</h6>
+      <p class="card-text product-price">{{ produit.prix }}€</p>
       <form
         class="d-flex justify-content-center flex-row m-2"
       >
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 product-quantity-input">
           <input
             #quantite
             type="number"
@@ -24,8 +24,7 @@
             aria-describedby="basic-addon2"
           />
           <div class="input-group-append">
-            <button type="button" class="btn btn-success" (click)="ajouterAuPanier(quantite)">Ajouter</button>
-
+            <button type="button" class="btn btn-success add-to-cart-btn" (click)="ajouterAuPanier(quantite)">Ajouter</button>
           </div>
         </div>
       </form>
@@ -33,14 +32,14 @@
   </div>
   <a
     routerLink="/modifproduit/{{produit.id}}"
-    class="btn btn-warning m-2"
+    class="btn btn-warning m-2 edit-product-btn"
     *ngIf="checkAdmin('client')"
   >
     Modifier
   </a>
 
   <button
-    class="btn btn-danger"
+    class="btn btn-danger delete-product-btn"
     (click)="suppProduit()"
     *ngIf="checkAdmin('client')"
   >
